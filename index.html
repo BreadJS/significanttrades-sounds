@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>Significant Trades</title>
+</head>
+
+<body>
+	<div id="audioControls">
+		<input id="toggle" type="button" value="10M Up" onclick="sound.connect(); sound.tradeToSong(100, true);" />
+		<input id="toggle" type="button" value="10M Down" onclick="sound.connect(); sound.tradeToSong(100, false);" /><br>
+		<input id="toggle" type="button" value="1M Up" onclick="sound.connect(); sound.tradeToSong(30, true);" />
+		<input id="toggle" type="button" value="1M Down" onclick="sound.connect(); sound.tradeToSong(30, false);" /><br>
+		<input id="toggle" type="button" value="500K Up" onclick="sound.connect(); sound.tradeToSong(8, true);" />
+		<input id="toggle" type="button" value="500K Down" onclick="sound.connect(); sound.tradeToSong(8, false);" /><br>
+		<input id="toggle" type="button" value="100K Up" onclick="sound.connect(); sound.tradeToSong(5, true);" />
+		<input id="toggle" type="button" value="100K Down" onclick="sound.connect(); sound.tradeToSong(5, false);" /><br>
+		<input id="toggle" type="button" value="10K Up" onclick="sound.connect(); sound.tradeToSong(1, true);" />
+		<input id="toggle" type="button" value="10K Down" onclick="sound.connect(); sound.tradeToSong(1, false);" /><br>
+		<input id="toggle" type="button" value="1K Up" onclick="sound.connect(); sound.tradeToSong(0.5, true);" />
+		<input id="toggle" type="button" value="1K Down" onclick="sound.connect(); sound.tradeToSong(0.5, false);" />
+	</div>
+</body>
+
+<script src="tunajs/tuna.js"></script>
+<script src="sfx.js"></script>
+<script>
+	var context = null;
+	var usingWebAudio = true;
+	if (typeof AudioContext !== 'undefined') {
+		context = new AudioContext();
+	} else if (typeof webkitAudioContext !== 'undefined') {
+		context = new webkitAudioContext();
+	} else {
+		usingWebAudio = false;
+	}
+
+	const sound = new Sfx();
+
+</script>
+
+</html>
